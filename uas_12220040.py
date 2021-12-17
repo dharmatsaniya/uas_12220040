@@ -182,7 +182,7 @@ elif option_menu=='Soal D':
 
     prodyear = df[(df["tahun"] == tahun)][['name', 'kode_negara', 'region', 'sub-region', 'produksi']].sort_values(by=['produksi'], ascending=False).reset_index(drop=True)
     prodyear_max = prodyear[(kum["produksi"] > 0)].iloc[0]
-    podyear_min = prodyear[(prodyear["produksi"] > 0)].iloc[-1]
+    prodyear_min = prodyear[(prodyear["produksi"] > 0)].iloc[-1]
     prodyear_nol = kum[(kum["produksi"] == 0)].sort_values(by=['name']).reset_index(drop=True)
     prodyear_nol.index += 1
 
@@ -190,18 +190,18 @@ elif option_menu=='Soal D':
         st.markdown(
             f'''
             #### Negara dengan jumlah produksi terbesar pada tahun {tahun}  
-            Negara: {kum_max["name"]}\n
-            Kode negara: {kum_max["kode_negara"]}\n
-            Region: {kum_max["region"]}\n
-            Sub-region: {kum_max["sub-region"]}\n
-            Jumlah produksi: {kum_max["produksi"]}\n
+            Negara: {proddyear_max["name"]}\n
+            Kode negara: {prodyear_max["kode_negara"]}\n
+            Region: {prodyear_max["region"]}\n
+            Sub-region: {prodyear_max["sub-region"]}\n
+            Jumlah produksi: {ptodyear_max["produksi"]}\n
             
             #### Negara dengan jumlah produksi terkecil pada tahun {tahun}  
-            Negara: {kum_min["name"]}\n
-            Kode negara: {kum_min["kode_negara"]}\n
-            Region: {kum_min["region"]}\n
-            Sub-region: {kum_min["sub-region"]}\n
-            Jumlah produksi: {kum_min["produksi"]}\n
+            Negara: {prodyear_min["name"]}\n
+            Kode negara: {prodyear_min["kode_negara"]}\n
+            Region: {prodyear_min["region"]}\n
+            Sub-region: {prodyear_min["sub-region"]}\n
+            Jumlah produksi: {prodyear_min["produksi"]}\n
             '''
         )
     with colom2:     
